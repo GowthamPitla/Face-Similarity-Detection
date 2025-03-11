@@ -4,10 +4,16 @@ import numpy as np
 from flask import Flask, render_template, request, redirect, url_for
 from sklearn.metrics.pairwise import cosine_similarity
 import matplotlib.pyplot as plt
-import os
+from flask import Flask, render_template, request
+
+app = Flask(__name__)  # Make sure the Flask app is initialized
+
+@app.route('/')
+def home():
+    return "Face Similarity Detection App is Running!"
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # Use PORT from environment, default to 5000
+    port = int(os.environ.get("PORT", 5000))  # Get PORT from environment, default to 5000
     app.run(host="0.0.0.0", port=port, debug=True)
 
 app = Flask(__name__)
