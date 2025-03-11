@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><style>
+    body {background-color: powderblue;}
+    h2   {color: blue;}
+    p    {color: red;}
+    label{color: black;}
+    button{color: grey;}
+    h2 {
+        color: blue;
+        font-family: verdana;
+        font-size: 300%;
+      }
+    form {
+        color: red;
+        font-family: courier;
+        font-size: 160%;
+      }
+    <h1 style="text-align:center;">Centered Heading</h1>
+    <p style="text-align:center;">Centered paragraph.</p>
+    </style>
+    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Similarity Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2 style="text-align:center;">Upload Images for Face Similarity Detection</h2>
+    <form style="text-align:center;", action="/" method="post" enctype="multipart/form-data">
+        <label>Your Image:</label>
+        <input type="file" name="your_image" required>
+        <br>
+        <label>Father's Image:</label>
+        <input type="file" name="father_image" required>
+        <br>
+        <label>Mother's Image:</label>
+        <input type="file" name="mother_image" required>
+        <br>
+        <button style="color:blue;" style="font-size: 16px;" type="submit">Analyze</button>
+    </form>
+</body>
+</html>

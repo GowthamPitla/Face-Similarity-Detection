@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {background-color: powderblue;}
+        h2   {color: blue;}
+        p    {color: red;}
+        a    {color: brown;}
+        h2 {
+            color: blue;
+            font-family: verdana;
+            font-size: 300%;
+          }
+        p {
+            color: black;
+            font-family: courier;
+            font-size: 160%;
+          }
+        a {
+            color: brown;
+            front-family: courier;
+            front-size: 160%;
+        } 
+        </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align:center;">Results</h2>
+        <!--<p style="text-align:center;"><strong>Euclidean Distance:</strong> Closer to {{ closer_euclidean }}</p>
+        <p style="text-align:center;"><strong>Manhattan Distance:</strong> Closer to {{ closer_manhattan }}</p>
+        <p style="text-align:center;"><strong>Cosine Similarity:</strong> Closer to {{ closer_cosine }}</p>-->
+        <p style="text-align:center;"><strong>Percentage Similarity:</strong> {{ cosine_your_father }}% to Father, {{ cosine_your_mother }}% to Mother</p>
+
+        <div class="image-container">
+            <div style="text-align:center;">
+                <h3>Your Face</h3>
+                <img src="{{ url_for('static', filename=your_image) }}" width="200">
+            </div>
+            <div style="text-align:center;">
+                <h3>Father's Face</h3>
+                <img src="{{ url_for('static', filename=father_image) }}" width="200">
+            </div>
+            <div style="text-align:center;">
+                <h3>Mother's Face</h3>
+                <img src="{{ url_for('static', filename=mother_image) }}" width="200">
+            </div>
+        </div>
+
+        <a style="text-align:center;" href="/" class="back-button">Go Back</a>
+    </div>
+</body>
+</html>
