@@ -5,6 +5,16 @@ from flask import Flask, render_template, request, redirect, url_for
 from sklearn.metrics.pairwise import cosine_similarity
 import matplotlib.pyplot as plt
 from flask import Flask, render_template, request
+from flask import Flask, send_from_directory
+
+app = Flask(__name__)
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('static', 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10000, debug=True)
 
 app = Flask(__name__)  # Make sure the Flask app is initialized
 
